@@ -7,10 +7,41 @@
     <title>The Journey</title>
   </head>
   <body>
-    <header class="mx-auto max-w-7xl h-16 flex justify-between items-center">
+    <header class="relative mx-auto p-4 xl:p-0 max-w-7xl h-16 flex justify-between items-center">
       <h1 class="text-primary text-lg font-bold">The Journey</h1>
-      <nav>
-        <ul class="flex flex-row space-x-4">
+      <div id="nav-btn" class="md:hidden">
+        <svg
+          class="h-6 w-6 stroke-current text-primary"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </div>
+      <nav
+        id="nav"
+        class="
+          absolute
+          hidden
+          top-full
+          left-0
+          right-0
+          bg-white
+          p-4
+          md:p-0
+          shadow
+          md:shadow-none
+          text-right
+          md:text-left md:block md:static
+        "
+      >
+        <ul class="flex flex-col space-y-4 md:flex-row md:space-x-4 md:space-y-0">
           <li><a href="#">Actualités</a></li>
           <li><a href="#">Nos Services</a></li>
           <li class="font-bold"><a href="#">Nos Voyages</a></li>
@@ -18,8 +49,16 @@
         </ul>
       </nav>
     </header>
-    <main class="mx-auto max-w-7xl grid grid-cols-4">
-      <section class="col-span-3 flex flex-row flex-wrap justify-center gap-8">
+    <main class="mx-auto max-w-7xl grid grid-cols-1 xl:grid-cols-4">
+      <section
+        class="
+          row-start-2
+          xl:row-start-auto xl:col-span-3
+          flex flex-row flex-wrap
+          justify-center
+          gap-8
+        "
+      >
         <article class="shadow-lg rounded-2xl p-4 space-y-4 max-w-sm">
           <header>
             <h2 class="text-lg font-bold">Séjour en Italie</h2>
@@ -85,9 +124,12 @@
           </div>
         </article>
       </section>
-      <section class="p-8 col-start-4">
-        <form action="" class="space-y-8 sticky top-4">
-          <h3 class="text-lg font-bold">Filtrer les voyages</h3>
+      <section class="p-8 row-start-1 xl:row-start-auto xl:col-start-4">
+        <form
+          action=""
+          class="space-y-4 md:space-y-8 xl:sticky xl:top-4 grid grid-cols-1 md:grid-cols-2"
+        >
+          <h3 class="text-lg font-bold md:col-span-2">Filtrer les voyages</h3>
 
           <div class="space-y-3">
             <h4 class="font-bold">Type du voyage</h4>
@@ -116,7 +158,7 @@
             </select>
           </div>
 
-          <div class="flex justify-end">
+          <div class="flex justify-end md:col-span-2">
             <button type="submit" class="bg-primary text-white px-4 py-2 rounded">Filtrer</button>
           </div>
         </form>
